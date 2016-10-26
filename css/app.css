@@ -45,10 +45,7 @@ table {
     bottom: 0;
     right: 0;
     left: 0;
-    /* fill parent */
-    background-color: deepskyblue;
-    /* let's see it! */
-    color: white;
+    
 }
 
 .card.flipped {
