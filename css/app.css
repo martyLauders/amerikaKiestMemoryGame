@@ -1,82 +1,179 @@
-/* app css stylesheet */
-
-div {
-    font-size: 30px;
-}
-
-table {
-    width: 100%;
-}
-
-.container {
-    position: relative;
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    -ms-perspective: 800px;
-    -o-perspective: 800px;
-    perspective: 800px;
-    width: 100%;
-    display: inline-block;
-}
-
-.container::after {
-    padding-top: 56.25%;
-    /* 16:9 ratio */
-    display: block;
-    content: '';
-}
-
-.card {
-    /*  
-    width: 100%;
-    height: 100%;*/
-    -webkit-transition: -webkit-transform 1s;
-    -moz-transition: -moz-transform 1s;
-    -ms-transition: -ms-transform 1s;
-    -o-transition: -o-transform 1s;
-    transition: transform 1s;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    @font-face {
+        font-family: 'normal';
+        src: url('../fonts/proxima-bold.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/proxima-bold.woff') format('woff');
+        /* Pretty Modern Browsers */
+    }
     
-}
-
-.card.flipped {
-    -webkit-transform: rotateY( 180deg);
-    -moz-transform: rotateY( 180deg);
-    -ms-transform: rotateY( 180deg);
-    -o-transform: rotateY( 180deg);
-    transform: rotateY( 180deg);
-}
-
-.card img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.card .back {
-    -webkit-transform: rotateY( 180deg);
-    -moz-transform: rotateY( 180deg);
-    -ms-transform: rotateY( 180deg);
-    -o-transform: rotateY( 180deg);
-    transform: rotateY( 180deg);
-}
-
-.message {
-    width: 660px;
-    text-align: center;
-}
+    @font-face {
+        font-family: 'bold';
+        src: url('../fonts/proxima-extrabold.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/proxima-extrabold.woff') format('woff');
+        /* Pretty Modern Browsers */
+    }
+    
+    body {
+        background-color: #1C2A36;
+    }
+    
+    div {
+        font-size: 30px;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    h1 {
+        padding-top: 3rem;
+        font-family: 'bold';
+        width: 60%;
+        text-align: center;
+        font-size: 2rem;
+        color: #fff;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
+    p {
+        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+        font-family: 'normal';
+        width: 60%;
+        color: #fff;
+        padding-bottom: 3rem;
+    }
+    
+    .popup>p,
+    .popup>h1 {
+        color: #fff;
+    }
+    
+    .container {
+        position: relative;
+        -webkit-perspective: 800px;
+        -moz-perspective: 800px;
+        -ms-perspective: 800px;
+        -o-perspective: 800px;
+        perspective: 800px;
+        width: 96%;
+        display: inline-block;
+        margin-bottom: -4px;
+        margin: 2%;
+    }
+    
+    .container::after {
+        padding-top: 56.25%;
+        /* 16:9 ratio */
+        display: block;
+        content: '';
+    }
+    
+    .card {
+    
+        -webkit-transition: -webkit-transform 1s;
+        -moz-transition: -moz-transform 1s;
+        -ms-transition: -ms-transform 1s;
+        -o-transition: -o-transform 1s;
+        transition: transform 1s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: url('../img/back2.png');
+        background-size: contain;
+    }
+    
+    .card__inside {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .card.flipped {
+        -webkit-transform: rotateY( 180deg);
+        -moz-transform: rotateY( 180deg);
+        -ms-transform: rotateY( 180deg);
+        -o-transform: rotateY( 180deg);
+        transform: rotateY( 180deg);
+    }
+    
+    .card img {
+        
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .card .back {
+        -webkit-transform: rotateY( 180deg);
+        -moz-transform: rotateY( 180deg);
+        -ms-transform: rotateY( 180deg);
+        -o-transform: rotateY( 180deg);
+        transform: rotateY( 180deg);
+    }
+    /* Popup */
+    
+    .ngdialog-overlay {
+        position: fixed;
+        background: rgba(28, 42, 54, .95);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        -webkit-animation: ngdialog-fadein 0.5s;
+        animation: ngdialog-fadein 0.5s;
+    }
+    
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+        -webkit-animation: ngdialog-flyin .5s;
+        animation: ngdialog-flyin .5s;
+        background: none;
+        border-radius: 5px;
+        color: #444;
+        font-family: 'Helvetica', sans-serif;
+        font-size: 1.1em;
+        line-height: 1.5em;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 1em;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .ngdialog.ngdialog-theme-default .ngdialog-close:before {
+        background: transparent;
+        border-radius: 3px;
+        color: #fff;
+        content: '\00D7';
+        font-size: 26px;
+        font-weight: 400;
+        height: 30px;
+        line-height: 26px;
+        position: absolute;
+        right: 3px;
+        text-align: center;
+        top: 3px;
+        width: 30px;
+    }
+    
+    .ngdialog.ngdialog-theme-default {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }

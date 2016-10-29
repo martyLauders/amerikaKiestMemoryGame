@@ -4,6 +4,8 @@
 function Tile(tile) {
     this.title = tile.name;
     this.text = tile.text;
+    this.movie = tile.movie;
+    this.textTitle = tile.textTitle;
     this.flipped = false;
 }
 
@@ -13,9 +15,9 @@ Tile.prototype.flip = function() {
 
 
 
-function Game(tileNames) {
+function Game(tileNames, title) {
     var tileDeck = makeDeck(tileNames);
-
+    this.title = title;
     this.grid = makeGrid(tileDeck);
     this.message = Game.MESSAGE_CLICK;
     this.unmatchedPairs = tileNames.length;
@@ -41,7 +43,7 @@ function Game(tileNames) {
 
             if (this.firstPick.title === tile.title) {
                 this.unmatchedPairs--;
-                this.openDialog(tile.title, tile.text);
+                this.openDialog(tile.title, tile.text, tile.movie, tile.textTitle);
                 this.message = (this.unmatchedPairs > 0) ? Game.MESSAGE_MATCH : Game.MESSAGE_WON;
                 this.firstPick = this.secondPick = undefined;
             } else {

@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Memory Game</title>
-    <link rel="stylesheet" href="css/app.css">
+
     <link rel="stylesheet" href="lib/ngDialog/css/ngDialog.css">
     <link rel="stylesheet" href="lib/ngDialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="css/app.css">
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/ngDialog/ngDialog.js"></script>
     <script src="js/app.js"></script>
@@ -16,16 +17,17 @@
 
 <body ng-controller="GameCtrl">
 
-    <div ng-click="clickToOpen()">open</div>
-    <div>Pairs left to match: {{game.unmatchedPairs}}</div>
-    <div>Matching: {{game.firstPick.title}}</div>
+    <h1>{{game.title}}</h1>
+    <p>Japanese printmaking, to be traced back to all depiction of realism stood. Goethe and in the year Jacques-Louis David completed his first published a working.</p>
+    <!--<p>Je moet nog {{game.unmatchedPairs}} <span ng-if="game.unmatchedPairs > 1">paren</span><span ng-if="game.unmatchedPairs == 1">paar</span> vinden.</p>-->
+    <!--<div>Matching: {{game.firstPick.title}}</div>-->
 
     <table>
         <tr ng-repeat="row in game.grid  track by $index">
             <td ng-repeat="tile in row" ng-click="game.flipTile(tile)">
                 <div class="container">
                     <div class="card" ng-class="{flipped: tile.flipped}">
-                        <img class="front" ng-src="img/back.png">
+                        <!--<img class="front" ng-src="img/back.png">-->
                         <img class="back" ng-src="img/{{tile.title}}.gif">
                     </div>
                 </div>
@@ -34,7 +36,9 @@
         </tr>
     </table>
 
-    <div class="message">{{game.message}}</div>
+
+    </video>
+    <p class="message">{{game.message}}</p>
 </body>
 
 
