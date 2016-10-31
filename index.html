@@ -18,27 +18,27 @@
 <body ng-controller="GameCtrl">
     <p class="header" ng-click="play = !play"><span ng-class="{'active': play}">Speel het spel</span> of <span ng-class="{'active': !play}">Bekijk de fragmenten</span></p>
 
-    <h1 ng-if="play == true">Het Amerika Kiest Memory Spel</h1>
-    <h1 ng-if="play == false">De Amerikaanse verkiezingscampagne in Gifs</h1>
+    <h1 ng-if="play== true ">Het Amerika Kiest Memory Spel</h1>
+    <h1 ng-if="play== false ">De Amerikaanse verkiezingscampagne in Gifs</h1>
 
-    <p ng-if="play == true" class="message">{{game.message}}</p>
-    <p ng-if="play == false" class="message">Klik op een Gif om meer informatie te krijgen over het fragment</p>
-
-    
+    <p ng-if="play== true " class="message title ">{{game.message}}</p>
+    <p ng-if="play== false " class="message title">Klik op een Gif om meer informatie te krijgen over het fragment</p>
 
 
 
-        <div class="container" ng-repeat="tile in game.tileDeck track by $index" ng-click="game.flipTile(tile)" ng-if="play == true">
-            <div class="card" ng-class="{flipped: tile.flipped}">
-                <!--<img class="front" ng-src="img/back.png">-->
-                <img class="back" ng-src="img/{{tile.name}}.gif">
-            </div>
+
+
+    <div class="container " ng-repeat="tile in game.tileDeck track by $index " ng-click="game.flipTile(tile) " ng-if="play==true ">
+        <div class="card " ng-class="{flipped: tile.flipped} ">
+            <!--<img class="front " ng-src="img/back.png ">-->
+            <img class="back " ng-src="img/{{tile.name}}.gif ">
         </div>
+    </div>
 
 
-        <div class="simple"  ng-click="game.openDialog(tile.name, tile.text)" ng-repeat="tile in game.tilesSimple track by $index" ng-if="play != true" style="background-image:url(img/trump1.gif)">
-            
-        </div>
+    <div class="simple " ng-click="game.openDialog(tile.name, tile.text) " ng-repeat="tile in game.tilesSimple track by $index " ng-if="play !=true " style="background-image:url(img/trump1.gif) ">
+
+    </div>
 
 
 

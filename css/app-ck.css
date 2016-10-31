@@ -166,7 +166,6 @@ body {
         padding-right: 20%;
         width: 60%;
         padding-top: 5rem;
-        
     }
 }
 
@@ -201,6 +200,10 @@ h1 {
     font-size: 2rem;
     color: #1C2A36;
     padding-bottom: 1rem;
+}
+
+.title {
+    color: #00A9CC;
 }
 
 p {
