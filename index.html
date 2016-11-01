@@ -31,12 +31,12 @@
     <div class="container " ng-repeat="tile in game.tileDeck track by $index " ng-click="game.flipTile(tile) " ng-if="play==true ">
         <div class="card " ng-class="{flipped: tile.flipped} ">
             <!--<img class="front " ng-src="img/back.png ">-->
-            <img class="back " ng-src="img/{{tile.name}}.gif ">
+            <img class="back " ng-src="assets/{{tile.name}}.gif ">
         </div>
     </div>
 
 
-    <div class="simple " ng-click="game.openDialog(tile.name, tile.text) " ng-repeat="tile in game.tilesSimple track by $index " ng-if="play !=true " style="background-image:url(img/trump1.gif) ">
+    <div class="simple " ng-click="game.openDialog(tile.name, tile.text) " ng-repeat="tile in game.tilesSimple track by $index " ng-if="play !=true " style="background-image:url(assets/{{tile.name}}.gif) ">
 
     </div>
 
