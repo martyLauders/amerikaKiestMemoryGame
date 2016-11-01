@@ -80,7 +80,7 @@ memoryGameApp.controller('GameCtrl', function GameCtrl($scope, game, ngDialog) {
     $scope.game.openDialog = function(name, text) {
 
         ngDialog.open({
-            template: '<div class="popup"><p>' + text + '</p><video width="100%" height="auto" controls autoplay src="video/' + name + '.mp4"></video></div>',
+            template: '<div class="popup"><p>' + text + '</p><video width="100%" height="auto" controls autoplay src="assets/' + name + '.mp4"></video></div>',
             plain: true
         });
     };
