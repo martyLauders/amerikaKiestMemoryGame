@@ -324,6 +324,11 @@ p {
     -ms-transform: rotateY( 180deg);
     -o-transform: rotateY( 180deg);
     transform: rotateY( 180deg);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .card img {
