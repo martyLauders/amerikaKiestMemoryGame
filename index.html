@@ -36,7 +36,7 @@
     </div>
 
 
-    <div class="simple " ng-click="game.openDialog(tile.title, tile.text) " ng-repeat="tile in game.tilesSimple track by $index " ng-if="play !=true " style="background-image:url(assets/{{tile.title}}.gif) ">
+    <div class="simple " ng-click="game.openDialog({{tile.title}}, {{tile.text}}) " ng-repeat="tile in game.tilesSimple track by $index " ng-if="play !=true " style="background-image:url(assets/{{tile.title}}.gif) ">
 
     </div>
 
