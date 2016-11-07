@@ -1,5 +1,5 @@
 function Tile(tile) {
-    this.title = tile.name;
+    this.name = tile.name;
     this.text = tile.text;
     this.movie = tile.movie;
     this.flipped = false;
@@ -71,9 +71,9 @@ function Game(tileNames) {
 
         } else {
 
-            if (this.firstPick.title === tile.title) {
+            if (this.firstPick.name === tile.name) {
                 this.unmatchedPairs--;
-                this.openDialog(tile.title, tile.text);
+                this.openDialog(tile.name, tile.text);
                 this.message = (this.unmatchedPairs > 0) ? Game.MESSAGE_MATCH : Game.MESSAGE_WON;
                 this.firstPick = this.secondPick = undefined;
             } else {
